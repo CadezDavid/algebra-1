@@ -1,0 +1,124 @@
+\newcommand{\sheet}{3}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item Height of $(0)$ is obviously $0$. Height of $(f)$ is $1$ because
+            of irreducibility of $f$ (easy to see).
+            For $(\pi, g)$, with $\pi \in A$ prime and $g \in A[T]$ irreducible
+            in $(A/\pi)[T]$, we have a chain $(0) \subsetneq (g) \subsetneq
+            (\pi, g)$. So dimension is at least $2$. But it obviously cannot be
+            more, there cannot be $(\tau, f) \subsetneq (\pi, g)$ for some prime
+            $\tau \in A$ and $f \in A[T]$ irreducible in $(A/\tau)[T]$. We also
+            cannot have $(f_1) \subsetneq (f_2)$ for irreducible $f_1, f_2 \in
+            A[T]$. So we easily excluded all possible chains of length more than
+            $2$.
+        \item Pick any $a = \sum^{\infty}_{i=0} a_i u^i \not= 0$. If $a_0 \not=
+            0$, then it is invertible anyway in $k[[u]]$. Else let $j$ be the
+            smallest with $a_j \not= 0$. Since we treat $u$ as invertible, we
+            can multiply $a$ with ${(u^{-1})}^j$ and get an invertible element
+            in $k[[u]]$. Thus $a$ is invertible in $A[u^{-1}]$. Since we can
+            look at $A[u^{-1}] = A[T] /_{(uT-1)}$, we deduce that the ideal
+            $(uT-1) \subseteq A[T]$ is maximal. Also, ideal $(uT - 1)$ is
+            obviously of height $1$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item Assumption of $k$ being algebraically closed means that the only
+            irreducible polynomials are those of degree $1$.
+
+            Since $k$ is a field, $k[x]$ is a PID and thus every maximal ideal
+            in $k[x, y] = k[x][y]$ has height $2$. Only maximal ideals in
+            $k[x][y]$ are therefore $(\pi, g)$ with $\pi \in k[x]$ prime and $g
+            \in k[x][y]$ whose image in $(k[x]/\pi)[y]$ is irreducible. Because
+            $k$ is algebraically closed, $\pi$ must be of degree $1$. That means
+            $k[x]/\pi = k$. So $g$ must an irreducible polynomial in $k[y]$, and
+            thus of degree $1$, which is exactly what we want to show. Leading
+            coefficients can be $1$ because $k$ is a field and we can just
+            multiply with their inverses.
+        \item First write $k[x, y, T]/(xT - 1)$ and $k[u, v, T]/(uT - 1)$.
+
+            First we note that $\phi(xT - 1) = 0$ and so $\phi(T) = T$.
+            For sure there exist more elegant ways, but for injectivity we can
+            suppose $\phi(g) = f (uT - 1) = 0 + (uT - 1)$. Then $\phi(g) = f
+            (\phi(xT - 1)) = 0$. So it remains to show that $\phi$ is injective
+            as a mapping $k[x, y, T]/(xT - 1) \rightarrow k[u, v, T]$. That is
+            true since it does not decrease the degrees of polynomials.
+
+            For surjectivity it is enough to show $u, v, T \in \im(\phi)$.
+            Of course $\phi(x) = u$ and $\phi(T) = T$. We want $v = \phi(t)$ for
+            some $t$. We multiply with $u$ and get $uv = u \phi(t) = \phi(xt)$.
+            Putting it all on one side we get $\phi(xt - y) = 0$. We get $xt - y
+            = 0$ and so $t = Ty$. Really $\phi(Ty) = Tuv = v$. So it is also
+            surjective.
+
+        \item 
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+    Let $n = \dim A$.
+    
+    Let $p_0 \subsetneq p_1 \subsetneq \cdots \subsetneq p_n$ prime ideals in
+    $A$. Then we can increase this chain with $p_{n+1} = p_n + (T)$ and get
+    strictly longer chain. To see that $p_{n+1}$ is still prime, we take $ab \in
+    p_{n+1}$. So it is of the form $ab = \gamma_0 + \gamma_1 T$ for $\gamma_0
+    \in p_n$ and $\gamma_1 \in A$. Write $a = \alpha_0 + \alpha_1 T$ and $b =
+    \beta_0 + \beta_1 T$ for $\alpha_0, \beta_0 \in A$, $\alpha_1, \beta_1 \in
+    A[T]$. We get that $\alpha_0 \beta_0 = \gamma_0 \in p_n$ and thus either
+    $\alpha_0 \in p_n$ or $\beta_0$. If former, then $a \in p_{n+1}$, otherwise
+    $b \in p_{n+1}$. This proves the lower bound.
+
+    Let $p_0 \subsetneq \cdots \subsetneq p_k$ be a chain in $A[T]$. Look at the
+    chain
+    \begin{equation}\label{chain in A}
+        p_0 \cap A \subsetneq \cdots \subsetneq p_n \cap A.
+    \end{equation}
+    Since every prime ideal $p_1 \in A[T]$ is either $pA[T]$ or directly above
+    $pA[T]$ (meaning there are no other prime ideal above $pA[T]$ and below
+    $p_1$), where $p = p_1 \cap A$. Therefore we cannot have a chain (with
+    strict inclusions) of more than two prime ideals in $A[T]$ that would
+    contract to the same prime ideal in $A$. Then we immediately see that in the
+    chain~\ref{chain in A} at most two consecutive elements can be the same,
+    therefore $k \leq 2n + 1$.
+\end{exercise}
+
+\begin{exercise}{4}
+    \begin{enumerate}
+        \item Of course $S \subseteq \iota^{-1}_S({(S^{-1}A)}^*)$. We also
+            easily see that for $ab \in \iota^{-1}_S({(S^{-1}A)}^*)$ we have
+            $\iota_S(a) \iota_S(b)$ invertible and thus each of them must be
+            invertible. So the set $\iota^{-1}_S({(S^{-1}A)}^*)$ is saturated by
+            itself.
+
+            Take now $a \in \iota^{-1}_S({(S^{-1}A)}^*)$. That means there exist
+            $r \in A$ and $s \in S$ such that
+            \begin{equation*}
+                \frac{r}{s} \frac{a}{1} = \frac{1}{1}.
+            \end{equation*}
+            So there exists $t \in S$ such that $t(ra - s) = 0$ from which we
+            get $tra = ts \in S$ and thus $a \in \bar{S}$, which proves the
+            other inclusion.
+        \item Because $S \subseteq T$, we have $\iota_T(S) \subseteq
+            {(T^{-1}A)}^*$. By universal property there exists a unique map
+            $\iota \colon S^{-1}A \rightarrow T^{-1}A$ with $\iota_T = \iota
+            \circ \iota_S$.
+        \item If $\iota$ is isomorphism, then it preserves invertible elements
+            and thus
+            \begin{equation*}
+                \bar{S} = \iota^{-1}_S({(S^{-1}A)}^*) =
+                \iota^{-1}_S(\iota^{-1}({(T^{-1}A)}^*)) =
+                \iota^{-1}_T({(T^{-1}A)}^*) = \bar{T}.
+            \end{equation*}
+            If $\bar{S} = \bar{T}$, then from uniqueness and universal property
+            of $\iota$ it follows that $\iota = \id$.
+    \end{enumerate}
+\end{exercise}
+
+\end{document}
