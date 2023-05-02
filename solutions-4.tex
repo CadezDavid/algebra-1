@@ -1,0 +1,21 @@
+\newcommand{\sheet}{3}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item So $\{f_n\}_n \in A[[T]]$ is a sequence of elements such that $f_n
+            \in {(T)}^n$. Then we can define $f = \sum^{\infty}_{n = 0} f_n$,
+            because every coefficient will have only finitely many summands.
+            Then we obviously have $f - \sum^{n}_{k = 0} f_k \in {(T)}^{n+1}$ by
+            the definition of $f$. Also, if there would be $g \in A[[T]]$ which
+            is not equal to $f$ at the coefficient at degree $m$, then $g -
+            \sum^{m}_{k = 0} f_k \notin {(T)}^{n+1}$.
+        \item Suppose $A$ is noetherian.
+    \end{enumerate}
+\end{exercise}
+
+\end{document}
