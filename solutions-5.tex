@@ -1,0 +1,38 @@
+\newcommand{\sheet}{5}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    Pick an ascending chain of ideals in $A$
+    \begin{equation*}
+        I_0 \subseteq I_1 \subseteq I_2 \subseteq \cdots.
+    \end{equation*}
+    For every $j = 1, \ldots, n$ define $p_j \colon A \rightarrow A / a_j$ and
+    then $p_j(I_i) \subseteq A / a_j$ and observe the chains
+    \begin{equation*}
+        p_j(I_0) \subseteq p_j(I_1) \subseteq p_j(I_2) \subseteq \cdots.
+    \end{equation*}
+    Since they all terminate, pick $M$ to be the index when the longest one
+    terminates. Suppose $0 \not= a \in I_{M+1} \setminus I_M$. Because the
+    intersection of $a_j$ is $\{0\}$, we have $a \notin a_j$ for some $j$. Fix
+    that $j$. That means $p_j(a) \not= 0$ for that $j$. That means $p_j(a) \in
+    p_j(I_{M+1}) \setminus p_j(I_M)$, which is contradiction.
+
+    Since $p_j(I_{M+1}) \setminus p_j(I_M) = \emptyset$, we have $a \in p_j(I_M)$
+    for every $j$. That means $a = b_j + c_j$ for $b_j \in I_M$ and $c_j \in
+    a_j$. Look at
+    \begin{equation*}
+        a^n = (b_1 + c_1) \cdots (b_n + c_n) \in I_M
+    \end{equation*}
+    \begin{equation*}
+
+    \end{equation*}
+
+
+\end{exercise}
+
+
+\end{document}

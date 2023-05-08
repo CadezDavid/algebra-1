@@ -7,14 +7,167 @@
 
 \begin{exercise}{1}
     \begin{enumerate}
-        \item So $\{f_n\}_n \in A[[T]]$ is a sequence of elements such that $f_n
+        \item So ${\{f_n\}}_n \in A[[T]]$ is a sequence of elements such that $f_n
             \in {(T)}^n$. Then we can define $f = \sum^{\infty}_{n = 0} f_n$,
             because every coefficient will have only finitely many summands.
             Then we obviously have $f - \sum^{n}_{k = 0} f_k \in {(T)}^{n+1}$ by
             the definition of $f$. Also, if there would be $g \in A[[T]]$ which
             is not equal to $f$ at the coefficient at degree $m$, then $g -
-            \sum^{m}_{k = 0} f_k \notin {(T)}^{n+1}$.
-        \item Suppose $A$ is noetherian.
+            \sum^{m}_{k = 0} f_k \notin {(T)}^{m+1}$.
+        \item Suppose $A$ is noetherian and $I \subseteq A[[T]]$ ideal. At the
+            lectures we have shown that in this case $A[T]$ is noetherian, which
+            we will use.
+            Define the set
+            \begin{equation*}
+                B = \{ a T^n \mid \exists f \in I \colon f = a T^n +
+                \text{higher terms} \}
+            \end{equation*}
+            and the ideal it generates
+            \begin{equation*}
+                J = (B) \subseteq A[T].
+            \end{equation*}
+
+            \begin{claim}
+                For any generating set $B$ of an ideal $J$ in a noetherian ring
+                $A$, we can find a finite subset $C \subseteq B$ that generates
+                this ideal $J$.
+            \end{claim}
+
+            \begin{proof}
+                Set $C = \{c\}$ for any $c \in B$. If $(C) = J$, we are done.
+                Otherwise pick any $a \in J \setminus (C)$ and write $a =
+                \sum^{n}_{i=1} a_i c_i$. Since $a \notin (C)$, there is $c_i
+                \notin C$ and we can add all these $c_i$ to $C$. In such a step
+                we increase $(C)$ by at least $a$. We also add finitely many
+                elements in every step. Since the ring is noetherian, this
+                process terminates and we get a finite set $C \subseteq B$ that
+                generates $J$.
+            \end{proof}
+
+            Since $A[T]$ is neotherian and $B$ generates $J$, we can find $\{
+            a_1 T^{n_1}, \ldots, a_k T^{n_k} \} \subseteq B$ such that $J =
+            (a_1 T^{n_1}, \ldots, a_k T^{n_k})$. 
+
+            Denote with $f_i = a_i T^{n_i} + \text{higher terms} \in
+            I$ suitable $f_i \in I$. Pick any $g = b T^m + \text{higher terms}
+            \in I$. Then we have $c^1_m, \ldots, c^k_m \in A[T]$ such that
+            $\sum^k_{i=1} c^i_m a_i T^{n_i} = b T^m$. Observe that $c^i_m$ can
+            be taken to be monomials (powers $\not= m$ cancel anyway). So
+            \begin{equation*}
+                g - \sum^k_{i=1} c^i_m f_i \in I \cap {(T)}^{m+1}.
+            \end{equation*}
+            Continuing so forth we get power series $g_1, \ldots, g_k \in
+            A[[T]]$ defined by
+            \begin{equation*}
+                g_i = c^i_m T^m + c^i_{m+1} T^{m+1} + c^i_{m+2} T^{m+2} \cdots
+            \end{equation*}
+            Note that $c^i_m \in A[T]$, so this does not present the
+            coefficients exactly. But such $g_i$ exists and is unique, which we
+            can show using first part of the exercise. By construction we have
+            \begin{equation*}
+                g = \sum^k_{i=1} g_i f_i,
+            \end{equation*}
+            which shows $I = (f_1, \ldots, f_k)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item First observe that every element $f \in \C[[z]]$ with non-zero
+            constant term is invertible in the ring of power series $\C[[z]]$
+            with positive radius of convergence. We know it is invertible as a
+            formal power series from the lectures. The radius of convergence is
+            positive, since the inverse $\frac{1}{f}$ is bounded on some small
+            neighbourhood around $0$ (follows simply from continuity of $f$). So
+            there is a ball around $0$ where $\frac{1}{f}$ does not have
+            singularities and because the radius of convergence is the distance
+            to the nearest singularity, it is positive.
+
+            Let $I \subseteq \C[[z]]$ be an ideal. Pick $f \in I$. If constant
+            term of $f$ is non-zero, then $I = (1)$. Otherwise there exists $k
+            \in \N$ such that $f = z^k g$, where $g$ is a unit. This $k$ is just
+            the position of the first non-zero coefficient. So $z^k \in I$.
+
+            So $I$ is clearly defined by the minimum position of non-zero
+            coefficient over all elements $f \in I$. Let $l \in \N$ be such.
+            Then for every $h \in I$ either $h = z^l g$ for some $g \in \C[[z]]$
+            or $h = z^m g$ for some unit $g$. In first case we have $h \in
+            (z^l)$ and in the other contradiction with the minimality of $l$. So
+            $I = (z^l)$. So $\C[[z]]$ seems to even be a PID.
+        \item We claim $(\sin(x)) \subsetneq (\sin(\frac{x}{2})) \subsetneq
+            (\sin(\frac{x}{4})) \subsetneq (\sin(\frac{x}{8})) \subsetneq
+            \cdots$ is an infinite chain that does not terminate. Inclusions
+            follow from equation
+            \begin{equation*}
+                \sin(\frac{x}{2^{n+1}}) \cos(\frac{x}{2^{n+1}}) = \sin(\frac{x}{2^n}).
+            \end{equation*}
+            And they are strict, because
+            \begin{equation*}
+                \frac{\sin(\frac{x}{2^{n+1}})}{\sin(\frac{x}{2^n})}
+            \end{equation*}
+            is not a holomorphic function, it has a pole at $2^n \pi$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{3}
+    \begin{enumerate}
+        \item 
+        \item
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{4}
+    Let $A$ be a PID.
+    \begin{enumerate}
+        \item Let $a \in A \setminus \{0\}$ and $\pi \in A$ prime.
+
+            Lets first suppose that $\pi^{n+1} \nmid a$ and show
+            $\dim_{A/\pi} \pi^n B / \pi^{n+1} B = 0$.
+
+            Pick $\pi^n b + (a) \in \pi^n B$. Since $\gcd(\pi^{n+1}, a) =
+            \pi^n$, we have $\alpha, \beta \in A$ such that $\alpha \pi^{n+1} +
+            \beta a = \pi^n$. So $\alpha b \pi^{n+1} + \beta b a = b \pi^n$ and
+            since $\beta b a \in (a)$ we have $b \pi^n + (a) = \alpha b
+            \pi^{n+1} + (a) \in \pi^{n+1} B$. This proves $\pi^{n+1} B \subseteq
+            \pi^n B$, which we had to show.
+
+            Lets suppose now $\pi^{n+1} \mid a$. Write $a = u \pi^{n+1}$. We
+            claim $\pi^n + (a) \in \pi^n B \setminus \pi^{n+1} B$. That is true,
+            because $\pi^n + x a = \pi^n + x u \pi^{n+1}$ is not divisible by
+            $\pi^{n+1}$ for any $x \in A$. So we have found a non-trivial
+            element in the vector space $\pi^n B / \pi^{n+1} B$ and the
+            dimension must be at least $1$. To show it is exactly $1$ we can
+            show that every two elements are linearly dependent. Pick $\pi^n b +
+            (a), \pi^n c + (a) \in \pi^n B$. If $\pi \mid b$ or $\pi \mid c$,
+            then one of the vector is $0$ and they are linearly dependent.
+            Otherwise pick $\alpha + (\pi), \beta + (\pi) \in A/\pi$ such that
+            $\alpha b + (\pi) + \beta c + (\pi) = 0 + (\pi)$ (here we use
+            $\gcd{}$ and the fact that $A$ is a PID again). Then $\alpha \pi^n b
+            + \beta \pi^n c + (a) = \pi^n (\alpha b + \beta c) + (a) \in
+            \pi^{n+1} B$ and thus a zero vector.
+        \item Suppose $M = A^r \oplus A / a_1 \oplus \cdots \oplus A / a_k$, $N
+            = A^s \oplus A / b_1 \oplus \cdots \oplus A / b_l$ with $a_1,
+            \ldots, a_k, b_1, \ldots, b_l \in A$ non-zero and $a_1 \mid a_2 \mid
+            \ldots \mid a_k, b_1 \mid b_2 \mid \ldots \mid b_l$. Suppose also $M
+            \cong N$ as $A$-modules.
+
+            If we have an isomorvarphism $\varphi \colon M \rightarrow N$, we can
+            easily show $\Tor(M) \cong \Tor(N)$. Then we can quotient with these
+            torsion parts and get isomorvarphism between free modules, which are
+            isomorvarphic exactly when their ranks are the same. So we have $r =
+            s$. Also, since $\varphi$ maps torsion elements to torsion elements, we
+            can remove free parts of both $M$ and $N$.
+
+            For every $x \in A/a_1 \oplus \cdots \oplus A/a_k$ we have $a_1 x =
+            0$ and thus $a_1 \varphi(x) = 0$. Because $\varphi$ is surjective,
+            we get $a_1 \mid b_1$. By the same argument, only using
+            $\varphi^{-1}$ we get $b_1 \mid a_1$. So $a_1 = u_1 b_1$ for some
+            unit $u_1 \in A$. Suppose now $a_2 \not= u_2 b_2$ for any unit $u_2
+            \in A$. WLOG $b_2 \nmid a_2$. Then $b_2 \varphi(1) \in A/b_1
+            \subseteq N$ where $1 \in A/a_2 \subseteq M$. Since $0 \not= b_2 1
+            \in A/a_2$, we have $0 \not= \varphi(b_2 1) \in A/b_1$ and so \dots
+            We somehow continue this process and maybe show what we need to.
     \end{enumerate}
 \end{exercise}
 
