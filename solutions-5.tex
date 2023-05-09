@@ -75,6 +75,50 @@
                 \otimes m).
             \end{align*}
             It is clearly an inverse of $\Phi$.
+
+        \item The map
+            \begin{align*}
+                A / \mathfrak{a} \times M &\rightarrow M / \mathfrak{a}M \\
+                (a + \mathfrak{a}, m) &\mapsto m a + \mathfrak{a}
+            \end{align*}
+            Lets check it is well defined. If $a_1 + \mathfrak{a} = a_2 +
+            \mathfrak{a}$, then $m (a_1 - a_2) \in \mathfrak{a}$ and $m a_1 +
+            \mathfrak{a} = m a_2 + \mathfrak{a}$.
+
+            It is clearly also bilinear.
+
+            So by universal property it gives a unique map
+            \begin{align*}
+                \varphi \colon A / \mathfrak{a} \otimes M &\rightarrow M /
+                \mathfrak{a}M \\
+                (a + \mathfrak{a}) \otimes m &\mapsto a m + \mathfrak{a}M.
+            \end{align*}
+
+            Let us show the injectivity and surjectivity of $\varphi$.
+
+            Injectivity: Suppose $a m \in \mathfrak{a}M$. Then $a m = a_1 m_1$
+            for some $a_1 \in \mathfrak{a}$ and $m_1 \in M$. Calculate
+            \begin{align*}
+                (a + \mathfrak{a}) \otimes m &= (a(1 + \mathfrak{a})) \otimes m
+                \\
+                &= (1 + \mathfrak{a}) \otimes am \\
+                &= (1 + \mathfrak{a}) \otimes a_1 m_1 \\
+                &= a_1 (1 + \mathfrak{a}) \otimes m_1 \\
+                &= (a_1 + \mathfrak{a}) \otimes m_1 \\
+                &= 0 \otimes m_1 \\
+                &= 0.
+            \end{align*}
+
+            Surjectivity:
+            Take any $m + \mathfrak{a}M \in M/\mathfrak{a}M$. Then $\varphi((1 +
+            \mathfrak{a}) \otimes m) = m + \mathfrak{a}M$.
+
+            We could also construct the inverse
+            \begin{align*}
+                \gamma \colon M/\mathfrak{a}M &\rightarrow A/\mathfrak{a}
+                \otimes M \\
+                m + \mathfrak{a}M &\mapsto (1 + \mathfrak{a}) \otimes m.
+            \end{align*}
     \end{enumerate}
 \end{exercise}
 
