@@ -33,5 +33,49 @@
     submodule of a noetherian module is obviously also noetherian.
 \end{exercise}
 
+\begin{exercise}{2}
+\end{exercise}
+
+\begin{exercise}{3}
+    In this exercise $\otimes$ will be written instead of $\otimes_A$.
+    \begin{enumerate}
+        \item With the condition $\Phi((\ldots, 0, n_i \otimes m, 0, \ldots)) =
+            (\ldots, 0, n_i, 0, \ldots) \otimes m$ and additivity of $\Phi$ we
+            can define it on each summand in $\bigoplus_{i \in I} (N_i \otimes
+            M)$ separately. Using universal property we get unique maps
+            \begin{align*}
+                N_i \otimes M &\rightarrow (\bigoplus_{i \in I} N_i) \otimes M
+                \\
+                n \otimes m &\mapsto (\ldots, 0, n, 0, \ldots) \otimes m.
+            \end{align*}
+            They define a unique map
+            \begin{align*}
+                \Phi \colon \bigoplus_{i \in I} (N_i \otimes M) &\rightarrow
+                (\bigoplus_{i \in I} N_i) \otimes M \\
+                \sum_{i \in I} (n_i \otimes m) &\mapsto (\sum_{i \in I} n_i)
+                \otimes m.
+            \end{align*}
+            Note that the definition is given on elementary tensors. It then
+            extends linearly to all elements of the sum of tensor products. By
+            construction it also satisfies the given condition.
+
+            Let us now construct the inverse. Using universal property of the
+            tensor product $(\bigoplus_{i \in I} N_i) \otimes M$ on the map
+            (it is clearly bilinear)
+            \begin{align*}
+                (\bigoplus_{i \in I} N_i) \times M &\rightarrow \bigoplus_{i \in
+                I} (N_i \otimes M) \\
+                (\sum_{i \in I} n_i, m) &\mapsto \sum_{i \in I} (n_i \otimes m).
+            \end{align*}
+            We get a unique map
+            \begin{align*}
+                (\bigoplus_{i \in I} N_i) \otimes M &\rightarrow \bigoplus_{i
+                \in I} (N_i \otimes M) \\
+                (\sum_{i \in I} n_i) \otimes m &\mapsto \sum_{i \in I} (n_i
+                \otimes m).
+            \end{align*}
+            It is clearly an inverse of $\Phi$.
+    \end{enumerate}
+\end{exercise}
 
 \end{document}
