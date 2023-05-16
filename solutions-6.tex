@@ -1,0 +1,32 @@
+\newcommand{\sheet}{6}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    We note that the map is defined on elementary tensors.
+
+    Well defined:
+    Suppose $\sum^n_{i=1} a_i \otimes b_i = 0$. Then $(\sum^n_{i=1} a_i \cdot
+    b_i) (1 \otimes 1) = 0$.
+
+    Injectivity:
+    Take $\sum^n_{i=1} a_i \otimes b_i \in \mathfrak{a} \otimes_A \mathfrak{b}$.
+    Suppose $\sum^n_{i=1} a_i \cdot b_i = 0$. Then we can simply observe that
+    since $a \otimes b = 1 \otimes (a b)$ we get
+    \begin{equation*}
+        \sum^n_{i=1} a_i \otimes b_i = 
+        \sum^n_{i=1} 1 \otimes (a_i \cdot b_i) = 1 \otimes (\sum^n_{i=1} a_i
+        \cdot b_i) = 1 \otimes 0 = 0
+    \end{equation*}
+    which proves injectivity.
+
+    Surjectivity:
+    An element $\sum^n_{i=1} a_i \cdot b_i \in \mathfrak{a} \cdot \mathfrak{b}$
+    is the image of an element $\sum^n_{i=1} a_i \otimes b_i \in \mathfrak{a}
+    \otimes_A \mathfrak{b}$.
+\end{exercise}
+
+\end{document}
