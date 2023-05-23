@@ -29,4 +29,36 @@
     \otimes_A \mathfrak{b}$.
 \end{exercise}
 
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item Let $M = (b_1, \ldots, b_k)$ be the generators. Pick any
+            \begin{equation*}
+                    \prod_{i \in I} m_i \otimes n_i \in \prod_{i \in I} M \otimes_A
+                    N_i.
+            \end{equation*}
+            It is enough to only look at these kinds of elements, because they
+            generate $\prod_{i \in I} M \otimes_A N_i$.
+
+            Then write $m_i = \sum^k_{j = 1} a_{ij} b_j$ for every $i \in I$.
+            Then just observe
+            \begin{equation*}
+                \prod_{i \in I} (\sum^k_{j = 1} a_{ij} b_j) \otimes n_i = 
+                \sum^k_{j = 1} \prod_{i \in I} a_{ij} b_j \otimes n_i = 
+                \sum^k_{j = 1} \left( b_j \otimes (\prod_{i \in I} a_{ij} n_i)
+                \right)
+            \end{equation*}
+            which is the image of $\sum^k_{j = 1} \left( b_j \otimes (\prod_{i
+            \in I} a_{ij} n_i) \right) \in M \otimes_A \prod_{i \in I} N_i$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{3}
+\end{exercise}
+
+\begin{exercise}{4}
+    Let $J$ be the ``inverse'' of $I$, so $I \otimes_A J \cong A$. During the
+    lectures we've shown that tensoring preserves exact sequences and in the
+    proof we've shown that tensoring preserves surjectivity.
+\end{exercise}
+
 \end{document}
