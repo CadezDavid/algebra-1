@@ -1,0 +1,27 @@
+\newcommand{\sheet}{7}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{4}
+    Let
+    \begin{equation}
+        \varphi \colon (f, T) \rightarrow A[T]
+    \end{equation}
+    be the inclusion. Then
+    \begin{equation}
+        \id \otimes\,\varphi \colon (f, T) \otimes_{A[T]} (f, T) \rightarrow (f,
+        T) \otimes_{A[T]} A[T]
+    \end{equation}
+    is not injective, because
+    \begin{equation}
+        (\id \otimes\,\varphi)(f \otimes T - T \otimes f) = f \otimes T - T \otimes f = fT \otimes
+        1 - fT \otimes 1 = 0
+    \end{equation}
+    but $f \otimes T \not= T \otimes f \in (f, T) \otimes_{A[T]} (f, T)$.
+    Module $(f, T)$ is not flat by proposition 1 in lecture notes 12.
+\end{exercise}
+
+\end{document}
