@@ -5,6 +5,92 @@
 
 \maketitle
 
+\begin{exercise}{1}
+    \begin{enumerate}
+        \item Lets first prove that it is well-defined. For any $\varphi \colon
+            M \rightarrow N$ we
+            use the universal property of $B \otimes_A M$
+            \[
+                \begin{tikzcd}
+                    &B \times M \arrow{d} \arrow{r}{\tau} &N \\
+                    &B \otimes_A M \arrow{ur}
+                \end{tikzcd}
+            \]
+            where $\tau \colon B \times M \rightarrow N$ with $\tau(b, m) = b
+            \varphi(m)$. It is obviously bilinear, so universal property gives
+            us the map in the exercise. So it is well defined.
+
+            We can construct the inverse to the map given in the exercise with
+            \begin{align*}
+                \Hom_B(B \otimes_A M, N) &\rightarrow \Hom_A(M, N) \\
+                \psi &\mapsto (m \mapsto \psi(1 \otimes m))
+            \end{align*}
+            It is easy to check that their compositions are identities.
+
+        \item It is well defined, because it comes from a bilinear map
+            \begin{align*}
+                M \times N &\rightarrow (M \otimes_A B) \otimes_B N \\
+                (m, n) &\mapsto (m \otimes 1) \otimes n
+            \end{align*}
+
+            It is an isomorphism, because it has an inverse
+            \begin{align*}
+                (M \otimes_A B) \otimes_B N &\rightarrow M \otimes_A N \\
+                (m \otimes b) \otimes n &\mapsto m \otimes (b n)
+            \end{align*}
+            It is easy to check that their compositions are identities.
+
+        \item We can define $B = S^{-1} A$ and $M = S^{-1} M_1, N = S^{-1} M_2$.
+            We just have to put this in previous part and use $M \otimes_A
+            S^{-1} A = M$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{2}
+    \begin{enumerate}
+        \item We have to show
+            \begin{equation}
+                M_\mathfrak{p} = 0 \Longleftrightarrow M \otimes_A
+                k(\mathfrak{p}) = 0.
+            \end{equation}
+
+            Suppose $M_\mathfrak{p} = 0$. Then for every $x \in M$ and $q \in A
+            \setminus \mathfrak{p}$ we have $\frac{x}{q} = \frac{0}{1}$ which
+            means there exists $r \in A \setminus \mathfrak{p}$ such that $r x =
+            0$.
+            Pick now any $\sum_i n_i \otimes (b_i + \mathfrak{p}) \in M \otimes_A
+            k(\mathfrak{p})$. For every $n_i$ we find $r_i \in A \setminus
+            \mathfrak{p}$ as above. Since $r_i \notin \mathfrak{p}$, it is non
+            zero in $A / \mathfrak{p}$ and thus invertible in $\Quot(A /
+            \mathfrak{p})$. So we get
+            \begin{align*}
+                \sum_i n_i \otimes (b_i  + \mathfrak{p}) &= 
+                \sum_i n_i \otimes \left( \frac{r_i + \mathfrak{p}}{r_i +
+                \mathfrak{p}}(b_i  + \mathfrak{p}) \right) \\
+                &= \sum_i n_i \otimes \left( r_i \frac{1 + \mathfrak{p}}{r_i +
+                \mathfrak{p}}(b_i  + \mathfrak{p}) \right) \\
+                &= \sum_i r_i n_i \otimes \left( \frac{1 + \mathfrak{p}}{r_i +
+                \mathfrak{p}}(b_i  + \mathfrak{p}) \right) \\
+                &= \sum_i r_i n_i \otimes \left( \frac{1 + \mathfrak{p}}{r_i +
+                \mathfrak{p}}(b_i  + \mathfrak{p}) \right) \\
+                &= \sum_i 0 \otimes \left( \frac{1 + \mathfrak{p}}{r_i +
+                \mathfrak{p}}(b_i  + \mathfrak{p}) \right) \\
+                &= 0
+            \end{align*}
+
+            Which proves one implication.
+
+        \item By associativity of the tensor product we have $\supp(M \otimes_A
+            N) \subseteq \supp(M) \cap \supp(N)$. Suppose now $M_p \not= 0$ and
+            $N_p \not= 0$. We have to show ${(M \otimes_A N)}_p \not= 0$. Using
+            properties of localizations we get $M_p \otimes_{A_p} N_p \not= 0$.
+            We know $A_p$ is a local ring with unique maximal ideal $p A_p$.
+
+            Not sure how to continue.
+
+    \end{enumerate}
+\end{exercise}
+
 \begin{exercise}{4}
     Let
     \begin{equation}
