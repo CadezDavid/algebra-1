@@ -43,8 +43,8 @@
     use that $k$ is algebraically closed.
     So we have
     \begin{equation*}
-        \Spec\left(k[x, y] / (y^2 - f(x))\right) = \{\, (x - x_0, y \pm
-        \sqrt{f(x_0)}) \mid x_0 \in k \,\} \cup \{\,(0)\,\}
+        \Spec\left(k[x, y] / (y^2 - f(x))\right) = \{ (x - x_0, y \pm
+        \sqrt{f(x_0)}) \mid x_0 \in k \} \cup \{ (0) \}
     \end{equation*}
 
     Suppose now $f(x) = g^2(x)$ is a square. Then
@@ -61,6 +61,12 @@
         \{\,(0)\,\}
     \end{multline*}
 
+    Lets now compute the cardinality of the fibers of the given map. First note
+    that $\Spec(k[x]) = \{\, (x - x_0) \mid x_0 \in k \,\} \cup \{ (0) \}$. Take
+    some $(x - x_0)$. We have to find all $p \in \Spec(k[x, y]/(y^2 - f(x)))$
+    such that $p \cap k[x] = (x - x_0)$. Looking at the sets we see that there
+    are two such prime ideals in $k[x, y] / (y^2 - f(x))$, namely $(x - x_0, y
+    \pm \sqrt{f(x_0)})$. So the cardinality of fibers is $2$.
 \end{exercise}
 
 \end{document}
