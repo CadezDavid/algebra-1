@@ -1,0 +1,30 @@
+\newcommand{\sheet}{9}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{1}
+    First we translate the case of finding $x, y, z \in \Z$ to finding rational
+    points on $x^2 - d y^2 = 1$.
+
+    We do exactly like in the lectures, we consider the line $L_q$ that goes
+    through $(-1, 0)$ and $(0, q)$. It intersects the hyperbola at exactly one
+    point. We may assume $x \geq 0$, $y \geq 0$ and $q \geq 0$, since everything
+    is symmetric.
+
+    We calculate and see that the line $L_q$ will intersect the hyperbola at the
+    points $\left( \frac{1+dq^2}{1-dq^2}, \frac{2q}{1-dq^2} \right)$ and $(-1,
+    0)$. Also, if we take a rational point $(x, y)$ on the curve, the line
+    through it and $(-1, 0)$ will have rational slope, namely $q$ with $q =
+    \frac{y}{x+1}$. That way we have a map from rational points on the curve to
+    $\Q$. These two maps are each others' inverse.
+
+    For every $q \in \Q$ we get the solution
+    \begin{equation*}
+        (x, y, z) = (1 + dq^2, 2q, 1 - dq^2).
+    \end{equation*}
+\end{exercise}
+
+\end{document}

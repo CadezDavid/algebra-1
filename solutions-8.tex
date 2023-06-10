@@ -1,0 +1,32 @@
+\newcommand{\sheet}{8}
+\input{Header.tex}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}{3}
+    Let $A \rightarrow B$ be a finite morphism of rings. Then $B$ is isomorphic
+    to a quotient polynomial ring $A[T_1, \ldots, T_n]$.
+
+    First we use that the fiber of a prime ideal $\mathfrak{p} \in A$ is equal to
+    $\Spec(k(\mathfrak{p}) \otimes_A B)$ where $k(\mathfrak{p}) = A_\mathfrak{p}
+    / \mathfrak{p} A_\mathfrak{p}$.
+
+    Compute
+    \begin{align*}
+        k(\mathfrak{p}) \otimes_A B &= k(\mathfrak{p}) \otimes_A (A[T_1, \ldots,
+        T_n] \otimes_{A[T_1, \ldots, T_n]} B) \\
+        &= (k(\mathfrak{p}) \otimes_A A[T_1, \ldots, T_n]) \otimes_{A[T_1,
+        \ldots, T_n]} B
+    \end{align*}
+    Observe that $k(\mathfrak{p}) \otimes_A A[T_1, \ldots, T_n] \cong
+    k(\mathfrak{p})[T_1, \ldots, T_n]$.
+    So we get
+    \begin{align*}
+        k(\mathfrak{p}) \otimes_A B &= k(\mathfrak{p})[T_1, \ldots, T_n]
+        \otimes_{A[T_1, \ldots, T_n]} B
+    \end{align*}
+\end{exercise}
+
+\end{document}
